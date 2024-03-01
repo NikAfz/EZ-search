@@ -10,8 +10,8 @@ function App() {
 
   return (
     <>
-      {/* <Time/> */}
-      {/* <Contact/> */}
+      <Time/>
+      <Contact/>
       <SearchBlockText/>
       
     </>
