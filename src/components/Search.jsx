@@ -1,7 +1,7 @@
 function Search(props) {
   return (
     <>
-      <input type="search" placeholder="Search" className="input--filed"/>
+      <input name="search" type="search" placeholder="Search" className="input--filed"/>
     </>
   )
 };
