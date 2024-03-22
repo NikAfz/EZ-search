@@ -1,8 +1,8 @@
 function Search(props) {
   return (
-    <>
-      <input name="search" type="search" placeholder="Search" className="input--filed"/>
-    </>
+    <form class="form" action="https://www.google.com/search?q=" method="get" autoComplete="off" >
+      <input  name="q" type="search" placeholder="Search" className="input--filed"/>
+    </form>
   )
 };
 
