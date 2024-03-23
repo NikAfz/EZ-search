@@ -5,7 +5,7 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 function Contact(props) {
   return (
     <>
-      <div class="dev--media-container">
+      <div className="dev--media-container">
       <h2>Contact Dev:</h2>
       <a href="mailto:nikafz980@gmail.com" className="dev--media-link"> <AlternateEmailIcon/> Email</a>
       <a href="https://github.com/NikAfz" className="dev--media-link"> <GitHubIcon/> GitHub</a>
