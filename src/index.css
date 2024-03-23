@@ -82,8 +82,9 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
   display: flex;
   flex-direction:row;
   align-items:stretch;
-  justify-content: center;
-  gap: 50px;
+  justify-content: space-between;
+  /* gap: 50px; */
+  width: 40vw;
 }
 .center-block--container{
   background-color: rgba(219, 202, 255, 0.478);
@@ -149,4 +150,38 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
   justify-content:center;
   gap: 10vh;
   padding-top: 10vh;
+}
+
+.form{
+  position: relative;
+}
+.history--container{
+  background-color: white;
+  position:absolute;
+  top: calc(10vh + 60px);
+  left: 0;
+  right: 0;
+
+  display:flex ;
+  flex-direction: column;
+  align-items: baseline;
+  background-color: black;
+  gap: 1px;
+  border-radius: 15px;
+  overflow:hidden;
+  border: 1px solid black;
+}
+.history{
+  font-size: 20px;
+  background-color: white;
+  width: calc(100% - 40px);
+  padding: 10px 20px 10px 20px;
+  max-height: 70px;
+  overflow: hidden;
+  /* background-color: #3a78ff; */
+  cursor:pointer;
+  transition-delay: 50ms;
+}
+.history:hover{
+  background-color: #e6e7e7;
 }
