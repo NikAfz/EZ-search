@@ -163,7 +163,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
   right: 0;
 
   display:flex ;
-  flex-direction: column;
+  flex-direction: column-reverse;
   align-items: baseline;
   background-color: black;
   gap: 1px;
