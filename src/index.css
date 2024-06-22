@@ -89,7 +89,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
 }
 .invisible{
   opacity: 0;
-  transition:opacity .7s;
+  transition:opacity .4s;
 }
 .center-block--container{
   background-color: rgba(219, 202, 255, 0.478);
