@@ -167,6 +167,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
   left: 0;
   right: 0;
   z-index: 2;
+  z-index: 2;
 
   display:flex ;
   flex-direction: column-reverse;
@@ -187,6 +188,23 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
   /* background-color: #3a78ff; */
   cursor:pointer;
   transition-delay: 50ms;
+  position: relative;
+}
+.history-remove--button{
+  font-size: 15px;
+  padding: 4px 8px ;
+  border: 1px solid rgb(112, 112, 112);
+  border-radius: 50px;
+  
+  position:absolute;
+  top: 10px;
+  right: 15px;
+  background-color: white;
+  opacity: 0;
+  transition: opacity 0.1s;
+}
+.history:hover .history-remove--button{
+  opacity: 1;
   position: relative;
 }
 .history-remove--button{
