@@ -11,16 +11,18 @@ function Search(props) {
   }, []);
 
   const [isFocus, setIsFocus] = useState(false);
+  const [mouseFocus, setMouseFocus] = useState(false);
   const [searchInput, setSearchInput] = useState("");
 
   const historyRes = history.map((res, index) => {
     return (
-      <div className="history" key={index}>
+      <div className="history" key={index} 
+      onClick={()=> {window.open(`https://www.google.com/search?q=${res}`, "_self");}}>
         {res}
+        {/* <button className="history-remove--button" onClick={() => Remove(index)}> &#10008; </button> */}
       </div>
     );
   });
-
   function handleSubmit(e) {
     e.preventDefault();
     setHistory((prev) => {
@@ -31,10 +33,24 @@ function Search(props) {
       localStorage.setItem("searchHistoryKey", JSON.stringify(updatedHistory));
       return updatedHistory;
     });
-    window.open(`https://www.google.com/search?q=${searchInput}`);
+    window.open(`https://www.google.com/search?q=${searchInput}`, "_self");
     setSearchInput("");
   }
 
+  function BlurFocus(params) {
+    if (mouseFocus) {
+      return;
+      
+    }else{setIsFocus(false);}
+    
+  }
+
+  if (isFocus === true && history.length > 0) {
+    props.setShowBlocks(false)
+  }
+  if (isFocus === false) {
+    props.setShowBlocks(true)
+  }
   return (
     <>
       <form
@@ -45,17 +61,22 @@ function Search(props) {
         onSubmit={handleSubmit}
       >
         <input
+          id="input--filed"
           name="q"
           type="search"
           placeholder="Search"
           className="input--filed"
           value={searchInput}
           onChange={(e) => setSearchInput(e.target.value)}
-          onBlur={() => setIsFocus(false)}
+          onBlur={()=>BlurFocus()}
+          
           onFocus={() => setIsFocus(true)}
         />
-        {isFocus && (
-          <div className="history--container">
+        {isFocus&& history.length > 0 && (
+          <div className="history--container"
+          onMouseEnter={()=> setMouseFocus(true)}
+          onMouseLeave={()=> setMouseFocus(false)}
+          > 
             {historyRes}
           </div>
         )}
