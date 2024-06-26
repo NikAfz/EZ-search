@@ -16,8 +16,11 @@ function Search(props) {
 
   const historyRes = history.map((res, index) => {
     return (
-      <div className="history" key={index} 
-      onClick={()=> {window.open(`https://www.google.com/search?q=${res}`, "_self");}}>
+      <div 
+        className="history" 
+        key={index} 
+        onClick={()=> {window.open(`https://www.google.com/search?q=${res}`, "_self");}}
+      >
         {res}
         {/* <button className="history-remove--button" onClick={() => Remove(index)}> &#10008; </button> */}
       </div>

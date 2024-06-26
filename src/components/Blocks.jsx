@@ -7,9 +7,9 @@ function Blocks(props) {
   return (
     <>
       <div className={props.showBlocks? "blocks": "blocks invisible"}>
-        <LeftBlock/>
+        {props.showSidePanel? <LeftBlock/> : null}
         <CenterBlock/>
-        <RightBlock/>
+        {props.showSidePanel? <RightBlock/> : null}
       </div>
     </>
   )
