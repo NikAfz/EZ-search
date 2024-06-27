@@ -11,6 +11,7 @@
 }
 body{
   font-family: "Prompt", sans-serif;
+  overflow: hidden;
 }
 .time--container{
   position: fixed;
@@ -134,14 +135,13 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
   display: flex;
   position: fixed;
   top: 20px;
-
 }
 .custom-text{
   font-size: 50px;
-  width: 80vw;
+  background-color: #3a78ff;
+  width: 60vw;
   font-weight: 700;
   font-family:kapakana;
-  flex-wrap: wrap;
   text-shadow: 5px 5px 10px #5427b4;
   text-align: center;
 }
@@ -237,34 +237,60 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
   border-radius: 50px;
   border: 2px solid #778899;
   background-color: transparent;
-
-}
-.side-panel--screan{
-  background-color: transparent;
-
-  position:absolute;
-  z-index:5;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content:right;
+  cursor: pointer;
 }
 .side-panel--container{
-  background-color: rgba(240, 128, 128, 0.267);
+  background-color: rgba(240, 128, 128, 0.788);
   width: 300px;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transition: all ease .5s;
+}
+.side-panel--container-hiden{
+  right: -310px;
+}
+.side-panel--closer{
+  background-color: transparent;
   
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0vw;
+  transition: all 500ms;
+}
+.side-panel--closer-hiden{
+  left: 101vw;
 }
 .side-panel--item{
-  /* background-color: lightgreen; */
+  background-color: lightgreen;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding-left: 20px;
   margin: 10px 0;
+  width: 280px;
 }
 .side-panel--lable{
   background-color: lightblue;
   font-size: 18px;
+}
+.custom-text--input{
+  height: 120px;
+  max-height: 120px;
+  width:235PX ;
+  font-size: 18px;
+  padding: 10px 10px;
+  margin: 10px 0;
+  border: 1px solid black;
+  border-radius: 20px;
+  overflow:hidden;
+  outline: none;
+  resize:none;
+  font-family: "Prompt", sans-serif;
 }

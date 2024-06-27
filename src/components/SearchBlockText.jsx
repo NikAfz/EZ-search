@@ -7,7 +7,7 @@ function SearchBlockText(props) {
   return (
     <>
       <div className="search-block-text--container ">
-        {props.showCustumText? <CustomText/> : null}
+        {props.showCustomText? <CustomText customText={props.customText}/> : null}
         <Search 
           setShowBlocks={setShowBlocks}
         />

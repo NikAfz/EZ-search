@@ -2,7 +2,7 @@ function CustomText(props) {
   return (
     <>
       <div className="custom-text--container">
-        <p className="custom-text">consectetur adipisicing elit Facilis, alias</p>
+        <p className="custom-text">{props.customText}</p>
       </div>
     </>
   )

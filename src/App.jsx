@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './index.css'
@@ -11,21 +11,49 @@ function App() {
   const [showTime, setShowTime] = useState(true)
   const [showContactDev, setShowContactDev] = useState(true)
   const [showSidePanel, setShowSidePanel] = useState(true)
-  const [showCustumText, setShowCustumText] = useState(true)
+  const [showCustomText, setShowCustomText] = useState(true)
+
+  const [customText, setCustomText] = useState(JSON.parse(localStorage.getItem("textKey")) || "you can change some stuff in the settings")
+
+ 
+
+
+
+  useEffect(() => {
+    const timeHistory = localStorage.getItem("timeSettingKey");
+    const contactHistory = localStorage.getItem("contactSettingKey");
+    const panelHistory = localStorage.getItem("panelSettingKey");
+    const textHistory1 = localStorage.getItem("textSettingKey");
+
+    if (timeHistory) {
+      setShowTime(JSON.parse(timeHistory));
+    }
+    if (contactHistory) {
+      setShowContactDev(JSON.parse(contactHistory));
+    }
+    if (panelHistory) {
+      setShowSidePanel(JSON.parse(panelHistory));
+    }
+    if (textHistory1) {
+      setShowCustomText(JSON.parse(textHistory1));
+    }
+  }, []);
+
   return (
     <>
       {showTime? <Time /> : null}
       {showContactDev? <Contact/> : null}
       <SearchBlockText 
         showSidePanel={showSidePanel} 
-        showCustumText={showCustumText}
+        showCustomText={showCustomText}
+        customText={customText}
       />
       <SidePanel 
         showTime={showTime} setShowTime={setShowTime}
         showContactDev={showContactDev} setShowContactDev={setShowContactDev}
         showSidePanel={showSidePanel} setShowSidePanel={setShowSidePanel}
-        showCustumText={showCustumText} setShowCustumText={setShowCustumText}
-
+        showCustomText={showCustomText} setShowCustomText={setShowCustomText}
+        customText={customText} setCustomText={setCustomText}
       />
     </>
   )
