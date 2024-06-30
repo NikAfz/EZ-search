@@ -4,12 +4,12 @@ import Switch from '@mui/material/Switch';
 import Divider from '@mui/material/Divider';
 import { useState } from 'react';
 import { useEffect } from 'react';
-import zIndex from '@mui/material/styles/zIndex';
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 
 
 function SidePanel(props) {
   
-  const [showSetting, setShowSetting] = useState(true)
+  const [showSetting, setShowSetting] = useState(false)
   const [isShowingSetting, setIsShowingSetting] = useState(false)
 
   function handleTime() {
@@ -27,6 +27,10 @@ function SidePanel(props) {
   function handleCustomText() {
     props.setShowCustomText(p => !p)
     localStorage.setItem("textSettingKey", JSON.stringify(!props.showCustomText));
+  }
+  function removeHistory() {
+    localStorage.removeItem("searchHistoryKey");
+    location.reload();
   }
   
 
@@ -112,6 +116,21 @@ function SidePanel(props) {
           onChange={(e) => props.setCustomText(e.target.value)}
         ></textarea>
         
+        <h2>Colors</h2>
+        <div className='colors--container'>
+          <button className='colors--button green-b'></button>
+          <button className='colors--button blue-b'></button>
+          <button className='colors--button purple-b'></button>
+          <button className='colors--button red-b'></button>
+        </div>
+
+
+        <div className='side-panel--item'>
+          <p className='side-panel--lable'>remove history</p>
+          <button className='delete--button' onClick={removeHistory}>
+            <DeleteForeverIcon color='error'/>
+          </button>
+        </div>
       </div>
     </>
   )
