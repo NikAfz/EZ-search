@@ -15,6 +15,7 @@ function App() {
 
   const [customText, setCustomText] = useState(JSON.parse(localStorage.getItem("textKey")) || "you can change some stuff in the settings")
 
+  const [backgroundColor, setBackgroundColor] = useState("p")
  
 
 
@@ -47,6 +48,7 @@ function App() {
         showSidePanel={showSidePanel} 
         showCustomText={showCustomText}
         customText={customText}
+        backgroundColor={backgroundColor}
       />
       <SidePanel 
         showTime={showTime} setShowTime={setShowTime}
@@ -54,6 +56,7 @@ function App() {
         showSidePanel={showSidePanel} setShowSidePanel={setShowSidePanel}
         showCustomText={showCustomText} setShowCustomText={setShowCustomText}
         customText={customText} setCustomText={setCustomText}
+        backgroundColor={backgroundColor} setBackgroundColor={setBackgroundColor}
       />
     </>
   )

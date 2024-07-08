@@ -77,6 +77,7 @@ function SidePanel(props) {
           <p className='side-panel--lable'>show side panels</p>
           <FormControlLabel control={
             <Switch 
+              className='switch'
               checked={props.showSidePanel}
               onChange={()=>handleSidePanel()}
             />
@@ -118,10 +119,10 @@ function SidePanel(props) {
         
         <h2>Colors</h2>
         <div className='colors--container'>
-          <button className='colors--button green-b'></button>
-          <button className='colors--button blue-b'></button>
-          <button className='colors--button purple-b'></button>
-          <button className='colors--button red-b'></button>
+          <button className='colors--button green-b'  onClick={()=> props.setBackgroundColor('g')}></button>
+          <button className='colors--button blue-b'   onClick={()=> props.setBackgroundColor('b')}></button>
+          <button className='colors--button purple-b' onClick={()=> props.setBackgroundColor('p')}></button>
+          <button className='colors--button red-b'    onClick={()=> props.setBackgroundColor('r')}></button>
         </div>
 
 
@@ -130,6 +131,9 @@ function SidePanel(props) {
           <button className='delete--button' onClick={removeHistory}>
             <DeleteForeverIcon color='error'/>
           </button>
+        </div>
+        <div className='side-panel--item'> 
+        <a href="https://www.svgbackgrounds.com/set/free-svg-backgrounds-and-patterns/">Free SVG Backgrounds and Patterns by SVGBackgrounds.com</a>
         </div>
       </div>
     </>
