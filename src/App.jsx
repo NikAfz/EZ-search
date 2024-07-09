@@ -15,7 +15,7 @@ function App() {
 
   const [customText, setCustomText] = useState(JSON.parse(localStorage.getItem("textKey")) || "you can change some stuff in the settings")
 
-  const [backgroundColor, setBackgroundColor] = useState("p")
+  const [backgroundColor, setBackgroundColor] = useState(JSON.parse(localStorage.getItem('backgroundColor')) || "p")
  
 
 

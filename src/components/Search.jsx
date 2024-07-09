@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 
 function Search(props) {
   const [history, setHistory] = useState([]);
+  const [backgroundColor, setBackgroundColor] = useState("");
 
   useEffect(() => {
     const storedHistory = localStorage.getItem("searchHistoryKey");
@@ -9,6 +10,20 @@ function Search(props) {
       setHistory(JSON.parse(storedHistory));
     }
   }, []);
+  useEffect(() => {
+    if (props.backgroundColor === 'p') {
+      setBackgroundColor('input--filed input--color-p');
+    }
+    else if(props.backgroundColor === 'g'){
+      setBackgroundColor("input--filed input--color-g")
+    }
+    else if(props.backgroundColor === 'r'){
+      setBackgroundColor("input--filed input--color-r")
+    }
+    else if(props.backgroundColor === 'b'){
+      setBackgroundColor("input--filed input--color-b")
+    }
+  }, [props.backgroundColor]);
 
   const [isFocus, setIsFocus] = useState(false);
   const [mouseFocus, setMouseFocus] = useState(false);
@@ -68,7 +83,7 @@ function Search(props) {
           name="q"
           type="search"
           placeholder="Search"
-          className="input--filed"
+          className={backgroundColor}
           value={searchInput}
           onChange={(e) => setSearchInput(e.target.value)}
           onBlur={()=>BlurFocus()}

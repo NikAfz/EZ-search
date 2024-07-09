@@ -39,9 +39,10 @@ function SidePanel(props) {
   }, [props.customText])
 
   useEffect(()=>{
-    // if (showSetting===true) {
-    //   setTimeout( setIsShowingSetting(), 1700)
-    // }
+    localStorage.setItem("backgroundColor", JSON.stringify(props.backgroundColor));
+  }, [props.backgroundColor])
+
+  useEffect(()=>{
     setIsShowingSetting(p =>!p)
   }, [showSetting])
   return (
@@ -133,7 +134,7 @@ function SidePanel(props) {
           </button>
         </div>
         <div className='side-panel--item'> 
-        <a href="https://www.svgbackgrounds.com/set/free-svg-backgrounds-and-patterns/">Free SVG Backgrounds and Patterns by SVGBackgrounds.com</a>
+          <a className='creadit--link' href="https://www.svgbackgrounds.com/set/free-svg-backgrounds-and-patterns/">Free SVG Backgrounds and Patterns by SVGBackgrounds.com</a>
         </div>
       </div>
     </>

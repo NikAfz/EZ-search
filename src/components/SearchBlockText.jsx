@@ -8,20 +8,6 @@ function SearchBlockText(props) {
   const [showBlocks, setShowBlocks] = useState(true);
   const [backgroundColor,setBackgroundColor] = useState('')
 
-  // if (props.backgroundColor === 'p') {
-  //   setBackgroundColor("purple-back");
-  //   console.log(backgroundColor);
-  // }
-  // else if(props.backgroundColor === 'g'){
-  //   setBackgroundColor("green-back")
-  // }
-  // else if(props.backgroundColor === 'r'){
-  //   setBackgroundColor("red-back")
-  // }
-  // else if(props.backgroundColor === 'b'){
-  //   setBackgroundColor("blue-back")
-  // }
-
 
   useEffect(() => {
     if (props.backgroundColor === 'p') {
@@ -41,13 +27,18 @@ function SearchBlockText(props) {
   return (
     <>
       <div className={backgroundColor}>
-        {props.showCustomText? <CustomText customText={props.customText}/> : null}
+        {props.showCustomText? <CustomText 
+          customText={props.customText}
+          backgroundColor={props.backgroundColor}
+        /> : null}
         <Search 
           setShowBlocks={setShowBlocks}
+          backgroundColor={props.backgroundColor}
         />
         <Blocks 
           showBlocks={showBlocks}
           showSidePanel={props.showSidePanel}
+          backgroundColor={props.backgroundColor}
         />
       </div>
     </>
