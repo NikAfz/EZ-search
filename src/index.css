@@ -410,3 +410,75 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
   font-size: small;
   cursor: url(./assets/link-stroke.svg)10 20,auto;
 }
+.shortcut--screen{
+  background-color: rgba(0, 0, 0, 0.312);
+  backdrop-filter: blur(15px);
+  position:fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 10;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+.shortcut--container{
+  background-color: rgba(209, 209, 209, 0.658);
+  width: calc(25vw - 10px);
+  height: calc(30vw - 10px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 10px;
+  border-radius: 10px;
+}
+.shortcut--lable{
+  /* font-weight: 500; */
+  font-size: 25px;
+}
+.shortcut--inp{
+  height: 30px;
+  width: 250px;
+  font-size: 18px;
+  border: 2px solid black;
+  border-radius: 30px;
+  padding: 0 10px;
+  outline: none;
+  margin-bottom: 20px;
+}
+.shortcut--inp-img{
+  display: none;
+}
+.shortcut--inp-lable{
+  background-color: transparent;
+  /* width: 100px;
+  height: 50px; */
+  padding: 50px 110px;
+  border: 2px dashed black;
+  border-radius: 20px;
+  cursor: url(./assets/pointer.svg)10 20,auto;
+}
+.shortcut-button--container{
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 25px;
+}
+.shortcut--button{
+  width: 8vw;
+  height: 7vh;
+  border-radius: 15px;
+  font-size: 16px;
+  cursor: url(./assets/pointer.svg)10 20,auto;
+  background-color: white;
+}
+.cancel{
+  border: 2px solid #767676;
+  color: #575757;
+}
+.done{
+  border: 2px solid #14a014;
+  color: #14a014;
+}

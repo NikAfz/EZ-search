@@ -6,6 +6,7 @@ import Time from './components/Time'
 import Contact from './components/Contact'
 import SearchBlockText from './components/SearchBlockText'
 import SidePanel from './components/SidePanel'
+import ShortCutInput from './components/ShortCutInput'
 
 function App() {
   const [showTime, setShowTime] = useState(true)
@@ -42,6 +43,8 @@ function App() {
 
   return (
     <>
+      <ShortCutInput/>
+      
       {showTime? <Time /> : null}
       {showContactDev? <Contact/> : null}
       <SearchBlockText 
