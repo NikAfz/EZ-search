@@ -8,6 +8,8 @@ function Blocks(props) {
 
   const [backgroundColor,setBackgroundColor] = useState('');
 
+  // const [data, setData] = useData();
+
   useEffect(() => {
     if (props.backgroundColor === 'p') {
       setBackgroundColor('block block--p');
@@ -27,9 +29,26 @@ function Blocks(props) {
   return (
     <>
       <div className={props.showBlocks? "blocks": "blocks invisible"}>
-        {props.showSidePanel? <LeftBlock backgroundColor={backgroundColor}/> : null}
-        <CenterBlock backgroundColor={backgroundColor}/>
-        {props.showSidePanel? <RightBlock backgroundColor={backgroundColor}/> : null}
+        {props.showSidePanel? <LeftBlock 
+          backgroundColor={backgroundColor}
+          setShortCutPlace={props.setShortCutPlace}
+          setShowShortCutInp={props.setShowShortCutInp}
+          data={props.data}
+        /> : null}
+
+        <CenterBlock 
+          backgroundColor={backgroundColor}
+          setShortCutPlace={props.setShortCutPlace}
+          setShowShortCutInp={props.setShowShortCutInp}
+          data={props.data}
+        />
+
+        {props.showSidePanel? <RightBlock 
+          backgroundColor={backgroundColor}
+          setShortCutPlace={props.setShortCutPlace}
+          setShowShortCutInp={props.setShowShortCutInp}
+          data={props.data}
+        /> : null}
       </div>
     </>
   )

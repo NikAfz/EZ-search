@@ -13,13 +13,22 @@ function App() {
   const [showContactDev, setShowContactDev] = useState(true)
   const [showSidePanel, setShowSidePanel] = useState(true)
   const [showCustomText, setShowCustomText] = useState(true)
+  const [showShortCutInp, setShowShortCutInp] = useState(false)
 
   const [customText, setCustomText] = useState(JSON.parse(localStorage.getItem("textKey")) || "you can change some stuff in the settings")
 
   const [backgroundColor, setBackgroundColor] = useState(JSON.parse(localStorage.getItem('backgroundColor')) || "p")
  
+  const [shortCutPlace, setShortCutPlace] = useState('');
 
-
+  let [data, setData] = useState([
+    {
+      "place": 'r',
+      "name": 'Right',
+      "URL": 'https://github.com/NikAfz/cryptopia/blob/main/src/CoinList.jsx',
+      "img": 's'
+    },
+  ]);
 
   useEffect(() => {
     const timeHistory = localStorage.getItem("timeSettingKey");
@@ -43,16 +52,26 @@ function App() {
 
   return (
     <>
-      <ShortCutInput/>
+      {showShortCutInp? <ShortCutInput
+        setShowShortCutInp={setShowShortCutInp}
+        shortCutPlace={shortCutPlace}
+        setData={setData}
+        data={data}
+      /> : null}
       
       {showTime? <Time /> : null}
       {showContactDev? <Contact/> : null}
+
       <SearchBlockText 
         showSidePanel={showSidePanel} 
         showCustomText={showCustomText}
         customText={customText}
         backgroundColor={backgroundColor}
+        setShortCutPlace={setShortCutPlace}
+        setShowShortCutInp={setShowShortCutInp}
+        data={data}
       />
+      
       <SidePanel 
         showTime={showTime} setShowTime={setShowTime}
         showContactDev={showContactDev} setShowContactDev={setShowContactDev}
@@ -61,6 +80,7 @@ function App() {
         customText={customText} setCustomText={setCustomText}
         backgroundColor={backgroundColor} setBackgroundColor={setBackgroundColor}
       />
+    
     </>
   )
 }

@@ -39,6 +39,9 @@ function SearchBlockText(props) {
           showBlocks={showBlocks}
           showSidePanel={props.showSidePanel}
           backgroundColor={props.backgroundColor}
+          setShortCutPlace={props.setShortCutPlace}
+          setShowShortCutInp={props.setShowShortCutInp}
+          data={props.data}
         />
       </div>
     </>
