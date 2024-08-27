@@ -11,9 +11,10 @@ function ShortCutInput(props) {
 
 
 
-  function handleImgInp(e) {
+  function handleImgInp(event) {
     setIsUploaded(true);
-    setImg(e.target.value)
+    const file = event.target.files[0];
+    setImg(URL.createObjectURL(file))
   }
 
   function handleSubmit(params) {
@@ -77,9 +78,8 @@ function ShortCutInput(props) {
             type="file" 
             accept="image/png, image/jpeg" 
             name="img" 
-            id="file-upload" 
-            value={img}
-            onChange={(e)=>handleImgInp(e)} 
+            id="file-upload"
+            onChange={handleImgInp}
           />
           <label className={isUploaded? "uploaded shortcut--inp-lable":"shortcut--inp-lable"} htmlFor="file-upload">
             {isUploaded? "loaded" : "Upload"}

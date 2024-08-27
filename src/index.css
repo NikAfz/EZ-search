@@ -123,7 +123,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
   display: flex;
   justify-content:center;
   flex-wrap:wrap;
-  column-gap: 20px;
+  column-gap: 0px;
   row-gap: 10px;
 
   border-radius: 20px;
@@ -143,7 +143,6 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
 .test{
   width: 60px;
   height: 50px;
-  /* background-color: lightcoral; */
   border-radius: 15px;
   padding: 6px 10px;
   display: flex;
@@ -164,6 +163,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
   font-size: 13px;
   text-align: center;
   text-wrap:nowrap;
+  z-index: 100;
 }
 .short-cut-add--button{
   width: 50px;
@@ -176,7 +176,12 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
   border-radius: 30px;
   cursor: url(./assets/pointer.svg)10 20,auto;
 }
+.shortcut--img {
+  width: 32px;
+  height: 32px;
+  
 
+}
 .side-block--container{
   /* width:fit-content; */
 

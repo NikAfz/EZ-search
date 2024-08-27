@@ -10,7 +10,7 @@ function ShortCut(props) {
           onClick={()=> {window.open(props.URL, "_self");}}
         >
           {props.img? 
-            <img src={props.img} /> 
+            <img className='shortcut--img' src={props.img} /> 
             :
             <p className='no-img--char'> {props.name.charAt(0)} </p>
           }
